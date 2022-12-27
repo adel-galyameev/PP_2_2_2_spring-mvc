@@ -16,6 +16,14 @@ public class CarController {
 
     private CarService service;
 
+    public CarController() {
+    }
+
+    @Autowired
+    public CarController (CarService service) {
+        this.service = service;
+    }
+
     @GetMapping(value = "/cars")
     public String printCar (Model modelMap, @RequestParam(value = "count", required = false,defaultValue = "5") int count) {
         if (count > 5) {
@@ -25,9 +33,5 @@ public class CarController {
         modelMap.addAttribute("cars",cars);
         return "cars";
 
-    }
-    @Autowired
-    public void setCarService (CarService service) {
-        this.service = service;
     }
 }

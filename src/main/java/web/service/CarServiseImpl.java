@@ -1,6 +1,5 @@
 package web.service;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 import web.model.Car;
 
